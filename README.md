@@ -1,60 +1,109 @@
-# Akhil Reddy — Portfolio
+# Personal Portfolio Website
 
-A modern, fully responsive personal portfolio built with React, Vite, React Router,
-CSS Modules, and Framer Motion.
+A modern, responsive portfolio website built with **React.js** to showcase my projects, technical skills, education, and achievements as a Full-Stack Developer.
 
-## Getting started
+## Live Demo
+
+https://your-portfolio-url.vercel.app
+
+## Overview
+
+This portfolio serves as a central place to highlight my development journey, featured projects, technical expertise, and contact information. The website is designed with a clean and user-friendly interface, ensuring a seamless experience across desktop, tablet, and mobile devices.
+
+## Features
+
+* Responsive design for all screen sizes
+* Modern and intuitive user interface
+* Smooth navigation and animations
+* Dedicated sections for projects, skills, education, and contact information
+* Downloadable resume
+* Social media integration
+* Optimized performance and accessibility
+
+## Tech Stack
+
+### Frontend
+
+* React.js
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+
+### Tools
+
+* Vite
+* Git
+* GitHub
+* VS Code
+
+## Project Structure
+
+portfolio/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Installation and Setup
+
+### Prerequisites
+
+* Node.js (v18 or above)
+* npm
+
+### Clone the Repository
 
 ```bash
+git clone https://github.com/akhilreddymanda89/portfolio.git
+```
+
+### Navigate to the Project Directory
+
+cd portfolio
+
+### Install Dependencies
+
 npm install
-npm run dev      # starts the dev server (usually http://localhost:5173)
-npm run build    # production build → dist/
-npm run preview  # preview the production build locally
-```
 
-## Editing content
+### Run the Development Server
 
-Almost everything you'll want to change lives in one place:
+npm run dev
 
-```
-src/data/portfolioData.js
-```
+Open your browser and visit:
 
-This includes your name, bio, skills, projects, education, and contact details.
-Components read from this file, so you rarely need to touch component code just
-to update text.
+http://localhost:5173
 
-## Adding your real assets
+## Build for Production
 
-- **Profile photo**: drop an image at `public/profile.jpg`, then swap the
-  placeholder `<div>` in `src/components/Hero/Hero.jsx` for an `<img>` tag
-  (the spot is marked with a comment).
-- **Resume PDF**: add your resume at `public/resume.pdf`. The "Download Resume"
-  button in the Hero section already points at `/resume.pdf`.
-- **Project screenshots**: drop images in `public/projects/` and set the
-  `image` field for each project in `portfolioData.js`.
-- **Live GitHub stats**: the GitHub Stats section currently shows placeholder
-  numbers. See the comment in `src/components/GithubStats/GithubStats.jsx` for
-  two ways to wire it up to real data.
-- **Contact form**: the form validates input client-side but doesn't send
-  anywhere yet — see the `TODO` comment in `src/components/Contact/Contact.jsx`
-  to connect it to a backend or a service like Formspree/EmailJS.
+npm run build
 
-## Project structure
 
-```
-src/
-├── components/        # One folder per component: ComponentName.jsx + .module.css
-├── pages/              # Route-level components (Home, ProjectDetail, NotFound)
-├── data/portfolioData.js  # All editable content
-├── hooks/              # useScrollSpy, useScrollPast
-├── utils/              # scrollTo helper
-├── App.jsx             # Routing table + loading sequence
-├── main.jsx            # App entry point (Router + Helmet providers)
-└── index.css           # Design tokens (colors, type, spacing) + resets
-```
+##  About Me
 
-## Design tokens
+I am Akhil Reddy, a B.Tech Information Technology student with a strong interest in full-stack development and building user-centric web applications. I enjoy creating practical solutions using modern web technologies and continuously improving my problem-solving skills.
 
-All colors, fonts, and spacing are defined as CSS custom properties in
-`src/index.css`, so you can re-theme the whole site by editing one file.
+##  Contact
+
+* GitHub: https://github.com/akhilreddymanda89
+* LinkedIn: Add your LinkedIn profile link here
+* Email: Add your email address here
+
+## Future Enhancements
+
+* Add a blog section
+* Integrate a contact form with email support
+* Add dark/light mode toggle
+* Include GitHub statistics
+* Enhance animations and interactions
+
+##  License
+
+This project is open source and available under the MIT License.

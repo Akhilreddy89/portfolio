@@ -1,0 +1,76 @@
+/* src/components/Education/Education.module.css */
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-left: 1.75rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(var(--color-primary), var(--color-accent));
+  opacity: 0.4;
+}
+
+.item {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  left: -1.75rem;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+}
+
+.card {
+  padding: 1.25rem 1.5rem;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+}
+
+.school {
+  font-size: 1.1rem;
+  margin-top: 0.35rem;
+}
+
+.degree {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-top: 0.25rem;
+}
+
+.detail {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 2.25rem;
+  }
+  .dot {
+    left: -2.25rem;
+  }
+}

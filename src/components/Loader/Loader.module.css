@@ -1,0 +1,29 @@
+/* src/components/Loader/Loader.module.css */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  background: var(--color-bg);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 600;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.02em;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}

@@ -1,0 +1,180 @@
+/* src/index.css
+   Global design tokens + resets. Component-level styles live in CSS Modules
+   next to each component; this file only holds what truly needs to be global. */
+
+:root {
+  /* ---- Color palette (from design brief) ---- */
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-bg: #0f172a;
+  --color-bg-elevated: #131b30;
+  --color-card: rgba(255, 255, 255, 0.08);
+  --color-card-border: rgba(255, 255, 255, 0.12);
+  --color-text: #f8fafc;
+  --color-text-muted: rgba(248, 250, 252, 0.66);
+  --color-text-faint: rgba(248, 250, 252, 0.4);
+  --color-accent: #22d3ee;
+
+  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  --gradient-glow: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, rgba(99, 102, 241, 0) 70%);
+
+  /* ---- Typography ---- */
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ---- Layout ---- */
+  --container-width: 1200px;
+  --container-padding: clamp(1.25rem, 5vw, 3rem);
+  --section-padding-y: clamp(4rem, 9vw, 7rem);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Effects ---- */
+  --blur-glass: 18px;
+  --shadow-elevated: 0 20px 60px -20px rgba(0, 0, 0, 0.55);
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --navbar-height: 72px;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Layered background: base color + two soft gradient glows, fixed so they
+   stay put while content scrolls over them (cheap, GPU-friendly ambience). */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(34, 211, 238, 0.12) 0%, transparent 45%),
+    var(--color-bg);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Visible keyboard focus ring everywhere — accessibility requirement,
+   never remove without supplying a replacement indicator. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Shared utility classes (used by multiple components) ---- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.glass {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border-radius: var(--radius-lg);
+}
+
+.gradientText {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Screen-reader-only utility for accessible labels that shouldn't show visually */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

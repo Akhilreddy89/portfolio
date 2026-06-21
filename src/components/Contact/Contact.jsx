@@ -1,4 +1,3 @@
-// src/components/Contact/Contact.jsx
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';

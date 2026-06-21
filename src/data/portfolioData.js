@@ -1,6 +1,3 @@
-// src/data/portfolioData.js
-// Centralized content for the portfolio. Editing this file updates the whole site —
-// components stay "dumb" and simply render whatever lives here.
 
 export const profile = {
   name: 'Akhil Reddy',
@@ -11,11 +8,11 @@ export const profile = {
   location: 'Hyderabad, India',
   email: 'akhilreddymanda89@gmail.com',
   phone: '+91 9121884936',
-  resumeUrl: '/Akhilreddy_resume(2).pdf', // Replace public/resume.pdf with your actual resume file
+  resumeUrl: '/Akhilreddy_resume(2).pdf', 
   social: {
-    github: 'https://github.com/akhilreddymanda89',
+    github: 'https://github.com/akhilreddy89',
     linkedin: 'https://linkedin.com/in/akhilreddymanda',
-    leetcode: 'https://leetcode.com/akhilreddymanda89',
+    leetcode: 'https://leetcode.com/akhilreddy89',
     twitter: '', // optional — leave blank to hide the icon
   },
 };
@@ -66,12 +63,12 @@ export const projects = [
     image: null, // Drop a screenshot at public/projects/trajectory.png and reference it here
     githubUrl: 'https://github.com/akhilreddymanda89/Trajectory',
     liveUrl: '', // Add live demo link when deployed
-    year: '2026',
+    year: '2025',
     featured: true,
   },
   {
-    id: 'bus-route-optimization',
-    title: 'Bus Route Optimization',
+    id: 'route-optimization',
+    title: 'Route Optimization',
     tagline: 'Smarter transit, shorter commutes',
     description:
       'A web application designed to optimize transportation routes for improved efficiency and reduced travel time.',
@@ -82,9 +79,9 @@ export const projects = [
       'Optimized stop sequencing',
     ],
     image: null, // Drop a screenshot at public/projects/bus-route.png and reference it here
-    githubUrl: 'https://github.com/akhilreddymanda89/bus-route-optimization',
+    githubUrl: 'https://github.com/akhilreddy89/route-optimization',
     liveUrl: '',
-    year: '2025',
+    year: '2026',
     featured: true,
   },
 ];
